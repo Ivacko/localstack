@@ -36,7 +36,6 @@ version: "3.8"
 services:
   localstack:
     container_name: "${LOCALSTACK_DOCKER_NAME-localstack_main}"
-    # image: localstack/localstack
     image: ivacko/localstack
     ports:
       - "127.0.0.1:4566:4566"            # LocalStack Gateway
