@@ -24,7 +24,7 @@ Create file `shutdown-aws.sh`
 #!/bin/bash
 
 echo Saving data to pod
-localstack pod save file:///pods/main
+/usr/local/bin/localstack pod save file:///pods/main
 ```
 
 Make sure the script is executable: run chmod +x init-aws.sh and on shutdown-aws.sh on the files first.
@@ -46,7 +46,7 @@ services:
     volumes:
     - localstack-pods:/pods
     - ./init-aws.sh:/etc/localstack/init/ready.d/init-aws.sh
-    - ./shutdown-aws.sh:/etc/localstack/init/shutdown.d/shutdown.sh/shutdown-aws.sh
+    - ./shutdown-aws.sh:/etc/localstack/init/shutdown.d/shutdown-aws.sh
 volumes:
   localstack-pods:
 ```
